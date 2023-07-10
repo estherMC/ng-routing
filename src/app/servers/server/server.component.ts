@@ -29,7 +29,9 @@ export class ServerComponent implements OnInit {
     //We can use the next:
     //this.router.navigate(['/servers', this.server.id, 'edit']);
     //We can do it easily with this doing relatively:
-    this.router.navigate(['edit'], {relativeTo:this.route});
+    //preserve --> mantain queryParams, merge --> merge with new ones
+    this.router.navigate(['edit'], {relativeTo:this.route, queryParamsHandling: 'preserve'});
+
   }
 
 }
