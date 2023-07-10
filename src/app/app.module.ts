@@ -19,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent, children: [
     { path: ':id/:name', component: UserComponent },
   ] },
+  //{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } --> pathMatch = full revisa tota la ruta
   { path: 'servers', component: ServersComponent, children: [
     { path: ':id', component: ServerComponent },
     { path: ':id/edit', component: EditServerComponent }
