@@ -15,7 +15,11 @@ const appRoutes: Routes = [
     { path: ':id/:name', component: UserComponent },
   ] },
   //{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' } --> pathMatch = full revisa tota la ruta
-  { path: 'servers', canActivate: [AuthGuard], component: ServersComponent, children: [
+  { path: 'servers',
+  // canActivate: [AuthGuard],
+  canActivateChild: [AuthGuard],
+  component: ServersComponent,
+  children: [
     { path: ':id', component: ServerComponent },
     { path: ':id/edit', component: EditServerComponent }
   ]},
